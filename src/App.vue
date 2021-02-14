@@ -14,6 +14,10 @@
 
     <main class="text-gray-600">
         <h1>APP {{ counter }}</h1>
+        <div>
+            counter two : {{ $store.$GET('two.counter') }}
+        </div>
+
         <button class="btn" @click="setCounter(true)">counter +</button>
         <button class="btn" @click="setCounter(false)">counter -</button>
     </main>
@@ -30,13 +34,7 @@
         setup() {
 
             const store = useStore()
-
             const counter = computed( () => store.$GET( 'one.counter' ) )
-
-            store.$ACTION( {
-                type:    'one/increment',
-                payload: 100
-            } )
 
             return {
                 counter,

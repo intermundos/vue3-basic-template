@@ -7,6 +7,7 @@ const paths = {
     '@':       'src',
     '@assets': 'src/@assets',
     '@core':   'src/@core',
+    '@store':  'src/@core/store',
     '@ui':     'src/@ui',
 }
 
@@ -30,7 +31,7 @@ function makeAliasForWebpack() {
  */
 function makeAliasForVite() {
     return Object.entries( paths ).reduce( ( result, [ alias, path ] ) => {
-        result.push({ find: alias, replacement: resolve( ROOT, path ) })
+        result.push( { find: alias, replacement: resolve( ROOT, path ) } )
         return result
     }, [] )
 }

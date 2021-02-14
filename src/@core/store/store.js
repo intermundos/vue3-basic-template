@@ -1,10 +1,12 @@
 import { createStore }  from 'vuex'
 import { enhanceStore } from './utils/helpers.js'
-import * as One         from '@core/store/modules/one'
+import * as One         from '@store/modules/one'
+import * as Two         from '@store/modules/two'
 
 const store = createStore( {
     modules: {
-        [ One.NAMESPACE ]: One.Module
+        [ One.NAMESPACE ]: One.Module,
+        [ Two.NAMESPACE ]: Two.Module,
     }
 } )
 
