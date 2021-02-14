@@ -1,15 +1,37 @@
-import set from 'lodash/set'
-import get from 'lodash/get'
+import { Utils } from '@core/utils'
 
-const getter = ( state ) => ( prop ) => get( state, prop )
+
+/**
+ * Curried getter
+ * Receives state as the first argument
+ * @param state
+ * Receives props as the second argument -> 'moduleNamespace.property.nested
+ * @param state
+ * @return {function(*=): *}
+ */
+const getter = ( state ) => ( prop ) => Utils.OBJECTS.get( state, prop )
+
+/**
+ * Curried setter
+ * Receives state as the first argument
+ * @param state
+ * Receives {Object} as the second argument { prop: 'state property to be set', value: 'values to be set' }
+ * @example $SET = setter(state), later on $SET({ prop: '<module name>.<property>'})
+ * @example $SET = setter(state), later on $SET({ prop: 'module.user', value: 'User' })
+ * @return {function(...[*]=)}
+ */
 const setter = ( state ) => ( { prop, value } ) => {
-    if ( !get( state, prop ) ) {
-        throw new Error( `Unknown state property ${prop}` )
+    if ( Utils.VALUES.isUndefined( Utils.OBJECTS.get( state, prop ) ) ) {
+        throw new Error( `Unknown state property ${ prop }` )
     }
-    set( state, prop, value )
+    Utils.OBJECTS.set( state, prop, value )
 }
 
-
+/**
+ * Adds helper functions to the store
+ * @param store
+ * @return {*}
+ */
 export function enhanceStore( store ) {
 
     store.$GET = getter( store.state )

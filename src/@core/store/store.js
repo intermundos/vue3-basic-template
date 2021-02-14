@@ -1,13 +1,13 @@
-import { createStore }    from 'vuex'
-import { enhanceStore } from './utils/helpers.js';
-import { oneStoreModule } from '@core/store/modules/one'
+import { createStore }  from 'vuex'
+import { enhanceStore } from './utils/helpers.js'
+import * as One         from '@core/store/modules/one'
 
 const store = createStore( {
     modules: {
-        one: oneStoreModule
+        [ One.NAMESPACE ]: One.Module
     }
 } )
 
-enhanceStore(store)
+enhanceStore( store )
 
 export { store }

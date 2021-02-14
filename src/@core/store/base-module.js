@@ -1,7 +1,5 @@
 import { setter } from './utils/helpers.js';
 
-const genericMutation = () => {}
-
 const StoreModule = ( { state = {}, actions = {}, getters = {}, mutations = {} } ) => {
 
     return {
@@ -12,10 +10,11 @@ const StoreModule = ( { state = {}, actions = {}, getters = {}, mutations = {} }
         mutations:  {
             ...mutations,
             setProp: (state, config) => setter(state)(config)
+            // setProp will available in every store module as
+            // commit('setProp', { prop: 'prop name', value: 'value to set })
 
         },
     }
-
 }
 
 export { StoreModule }

@@ -3,6 +3,6 @@ export const state = () => ({
     user: {
         name: 'Anton',
         email: '',
-        messages: ['Hello']
+        messages: ['Hello', null, 'pirate']
     }
 })
