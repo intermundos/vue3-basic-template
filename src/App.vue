@@ -4,17 +4,18 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
+
+    .btn {
+        @apply bg-pink-400 p-3 m-1;
+    }
 </style>
 
 <template>
 
     <main class="text-gray-600">
         <h1>APP {{ counter }}</h1>
-        <p>name: {{ $store.$GET('one.user.name') }}</p>
-        <p>email: {{ $store.$GET('one.user.email') }}</p>
-        <p>messages: {{ $store.$GET('one.user.messages[0]') }}</p>
-        <button @click="setCounter(true)">counter +</button>
-        <button @click="setCounter(false)">counter -</button>
+        <button class="btn" @click="setCounter(true)">counter +</button>
+        <button class="btn" @click="setCounter(false)">counter -</button>
     </main>
 
 </template>
@@ -22,6 +23,7 @@
 <script>
 
     import { useStore } from 'vuex'
+    import { computed } from 'vue'
 
     export default {
         name: 'App',
@@ -29,32 +31,18 @@
 
             const store = useStore()
 
-            // const to = setTimeout( () => {
-            //     // store.$SET( {
-            //     //     prop:  'one.user',
-            //     //     value: {
-            //     //         name:     'aaaa',
-            //     //         email:    'aaaaaa@email',
-            //     //     }
-            //     // } )
-            //     // store.$SET( {
-            //     //     prop:  'one.user.messages[1]',
-            //     //     value: ['Second message']
-            //     // } )
-            //     return clearTimeout( to )
-            // }, 3000 )
+            const counter = computed( () => store.$GET( 'one.counter' ) )
 
-            store.commit('one/setProp', { prop: 'user.name', value: 'user name'})
-
-            const counter = store.$GET('one.counter')
-
-            store.commit( 'one/setProp', { prop: 'counter', value: counter + 1} )
+            store.$ACTION( {
+                type:    'one/increment',
+                payload: 100
+            } )
 
             return {
                 counter,
                 setCounter: ( action ) => action ?
-                    store.commit( 'one/setProp', { prop: 'counter', value: counter + 1} )
-                    : store.commit( 'one/setProp', { prop: 'counter', value: counter - 1} )
+                    store.$ACTION( { type: 'one/increment', payload: counter.value + 1 } )
+                    : store.$SET( { prop: 'one.counter', value: counter.value - 1 } )
             }
         }
     }
