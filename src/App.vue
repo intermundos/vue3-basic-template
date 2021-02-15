@@ -6,25 +6,8 @@
 
 <template>
 
-    <main class="text-gray-600">
-
-        <h1>APP {{ counter }}</h1>
-
-        <div>
-            counter two : {{ $store.$GET('two.counter') }}
-        </div>
-
-        <button class="btn" @click="setCounter(true)">counter +</button>
-        <button class="btn" @click="setCounter(false)">counter -</button>
-
-        <br><br><br>
-
         <router-view v-slot="{ Component, route }">
-            <transition :name="route.meta.transition || 'fade'">
-                <component :is="Component" :class="[route.name, route.meta.classes]" />
-            </transition>
         </router-view>
-    </main>
 
 </template>
 

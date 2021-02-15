@@ -4,14 +4,14 @@
 
 <template>
 
-    <header>
+    <header class="p-3 bg-indigo-500">
         <router-link to="/">Home</router-link>
         <router-link to="/about">About</router-link>
     </header>
 
     <main>
         <router-view v-slot="{ Component, route }">
-            <transition :name="route.meta.transition || 'fade'">
+            <transition name="fade" appear mode="ease-in" duration="100">
                 <component :is="Component" :class="[route.name, route.meta.classes]" />
             </transition>
         </router-view>
@@ -23,6 +23,6 @@
 
 <script>
     export default {
-        name: 'deafult.layout'
+        name: 'default.layout'
     }
 </script>
