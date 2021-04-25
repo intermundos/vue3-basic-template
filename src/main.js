@@ -7,10 +7,10 @@ import { router }    from '@core/router/router.js'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
-const app = createApp( App )
+const app = createApp(App)
 
 app.config.devtools = !isProduction
-app.use( store )
+app.use(store)
 app.use(router)
 
-router.isReady().then(() => app.mount( '#app' ))
+router.isReady().then(() => app.mount('#app'))

@@ -8,7 +8,7 @@ import { Utils } from '@core/utils'
  * @param state
  * @return {function(*=): *}
  */
-const getter = ( state ) => ( prop ) => Utils.OBJECTS.get( state, prop )
+const getter = ( state ) => ( prop ) => Utils.OBJECTS.get(state, prop)
 
 /**
  * Curried setter
@@ -20,10 +20,10 @@ const getter = ( state ) => ( prop ) => Utils.OBJECTS.get( state, prop )
  * @return {function(...[*]=)}
  */
 const setter = ( state ) => ( { prop, value } ) => {
-    if ( Utils.VALUES.isUndefined( Utils.OBJECTS.get( state, prop ) ) ) {
-        throw new Error( `Unknown state property ${ prop }` )
-    }
-    Utils.OBJECTS.set( state, prop, value )
+  if (Utils.VALUES.isUndefined(Utils.OBJECTS.get(state, prop))) {
+    throw new Error(`Unknown state property ${ prop }`)
+  }
+  Utils.OBJECTS.set(state, prop, value)
 }
 
 /**
@@ -36,8 +36,7 @@ const setter = ( state ) => ( { prop, value } ) => {
  * @return {function({type?: *, payload?: *}): *}
  */
 const action = ( store ) => ( { type, payload } ) => {
-    console.log('got action', type, payload)
-    return store.dispatch( type, payload )
+  return store.dispatch(type, payload)
 }
 
 /**
@@ -47,14 +46,14 @@ const action = ( store ) => ( { type, payload } ) => {
  */
 export function enhanceStore( store ) {
 
-    store.$GET = getter( store.state )
-    store.$SET = setter( store.state )
-    store.$ACTION = action( store )
+  store.$GET = getter(store.state)
+  store.$SET = setter(store.state)
+  store.$ACTION = action(store)
 
-    return store
+  return store
 }
 
 export {
-    setter,
-    getter,
+  setter,
+  getter,
 }

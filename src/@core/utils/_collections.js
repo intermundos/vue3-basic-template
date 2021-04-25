@@ -11,15 +11,15 @@ import reduce     from 'lodash/reduce'
 import filter     from 'lodash/filter'
 
 export {
-    find,
-    isEmpty,
-    difference,
-    groupBy,
-    sortBy,
-    sum,
-    clone,
-    forEach,
-    pull,
-    reduce,
-    filter
+  find,
+  isEmpty,
+  difference,
+  groupBy,
+  sortBy,
+  sum,
+  clone,
+  forEach,
+  pull,
+  reduce,
+  filter
 }

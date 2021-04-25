@@ -3,11 +3,11 @@
 </style>
 
 <template>
-    <section>About</section>
+  <section class="h-[400px] bg-pink-400">About</section>
 </template>
 
 <script>
-    export default {
-        name: 'about.view'
-    }
+  export default {
+    name: 'about.view'
+  }
 </script>

@@ -1,5 +1,5 @@
-import isUndefined from 'lodash/isUndefined.js';
+import isUndefined from 'lodash/isUndefined.js'
 
 export {
-    isUndefined
+  isUndefined
 }

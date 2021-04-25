@@ -3,9 +3,9 @@ const plugins = {}
 plugins.tailwindcss = {}
 
 if (process.env.NODE_ENV === 'production') {
-    plugins.autoprefixer = {}
+  plugins.autoprefixer = {}
 }
 
 module.exports = {
-    plugins
+  plugins
 }

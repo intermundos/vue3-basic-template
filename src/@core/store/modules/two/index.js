@@ -4,12 +4,11 @@ import * as actions    from './_actions.js'
 
 const NAMESPACE = 'two'
 
-const Module = StoreModule( {
-    namespaced: true,
-    state:      state(),
-    actions:    actions,
-    devtools:   true
-} )
-
+const Module = StoreModule({
+  namespaced: true,
+  state:      state(),
+  actions:    actions,
+  devtools:   true
+})
 
 export { Module, NAMESPACE }

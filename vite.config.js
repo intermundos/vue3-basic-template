@@ -1,4 +1,5 @@
-import vue   from '@vitejs/plugin-vue'
+import vue from '@vitejs/plugin-vue'
+
 const paths = require('./config/paths.js')
 
 /**
@@ -6,10 +7,10 @@ const paths = require('./config/paths.js')
  * @type {import('vite').UserConfig}
  */
 export default {
-    plugins: [ vue() ],
-    server:  {
-        port: process.env.PORT || 3000,
-        open: false
-    },
-    alias:   paths.makeAliasForVite()
+  plugins: [ vue() ],
+  server:  {
+    port: process.env.PORT || 3000,
+    open: false
+  },
+  alias:   paths.makeAliasForVite()
 }
