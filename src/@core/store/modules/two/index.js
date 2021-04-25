@@ -8,7 +8,6 @@ const Module = StoreModule({
   namespaced: true,
   state:      state(),
   actions:    actions,
-  devtools:   true
 })
 
 export { Module, NAMESPACE }

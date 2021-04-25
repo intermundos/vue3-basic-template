@@ -1,6 +1,8 @@
+import { isProduction } from '@core/config/environment'
 import { setter } from './utils/helpers.js'
 
-const StoreModule = ( { state = {}, actions = {}, getters = {}, mutations = {}, devtools = false } ) => {
+
+const StoreModule = ( { state = {}, actions = {}, getters = {}, mutations = {}, devtools = !isProduction } ) => {
 
   return {
     namespaced: true,
