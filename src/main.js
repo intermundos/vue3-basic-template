@@ -4,10 +4,11 @@ import { createApp } from 'vue'
 import App           from './App.vue'
 import { store }     from '@core/store/store.js'
 import { router }    from '@core/router/router.js'
+import { addTheme } from '@core/ui/primevue.js';
 
 const isProduction = process.env.NODE_ENV === 'production'
 
-const app = createApp(App)
+const app = addTheme(createApp(App))
 
 app.config.devtools = !isProduction
 app.use(store)

@@ -6,8 +6,7 @@
 
 <template>
 
-  <router-view v-slot="{ Component, route }">
-  </router-view>
+  <router-view />
 
 </template>
 
