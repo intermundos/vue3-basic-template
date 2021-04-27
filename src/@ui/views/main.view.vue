@@ -3,23 +3,24 @@
 </style>
 
 <template>
+
   <section>
 
     <div>
-      Main view Modal
+
+      <g-calendar :inline="true"/>
+
     </div>
 
     <modal>
 
       <template #activator="{ events }">
-        <g-button @click="events.toggle" class="bg-red-500 p-12">Open modal now</g-button>
+        <g-button @click="events.toggle">Open  now 1111</g-button>
       </template>
 
       <h1 class="text-3xl font-medium text-green-700">
-        Teleport from main view to body with counter {{ $store.$GET( 'two.counter' ) }}
+        Teleport from main view to body with counter {{ $store.$GET( 'two.counter' ) + 1000 }}
       </h1>
-
-      <g-calendar/>
     </modal>
 
   </section>
