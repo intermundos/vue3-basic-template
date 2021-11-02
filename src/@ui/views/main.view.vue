@@ -8,7 +8,7 @@
 
     <modal>
       <h1 class="text-3xl font-medium text-green-700">
-        Teleport from main view to body with counter {{ $store.$GET('two.counter') }}
+        Teleport from main view to body with counter
       </h1>
     </modal>
 
@@ -16,6 +16,7 @@
 </template>
 
 <script>
+
   import Modal from '@ui/components/modal.vue'
 
   export default {

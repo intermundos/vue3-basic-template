@@ -1,12 +1,22 @@
-module.exports = {
-  mode:     'jit',
-  purge:    [ './index.html', './src/**/*.{vue,js,ts,jsx,tsx}' ],
-  darkMode: false, // or 'media' or 'class'
-  theme:    {
-    extend: {},
+import { defineConfig } from 'windicss/helpers'
+// import colors           from 'windicss/colors'
+// import plugin           from 'windicss/plugin'
+//
+// console.log(plugin)
+
+export default defineConfig( {
+  preflight: true,
+  darkMode:  'class',
+  extract:   {
+    include: [ './**/*.html' ]
   },
-  variants: {
-    extend: {},
+  plugins:   [
+    // require( 'windicss/plugin/filters' ),
+    // require( 'windicss/plugin/forms' ),
+    // require( 'windicss/plugin/aspect-ratio' ),
+    // require( 'windicss/plugin/line-clamp' ),
+  ],
+  shortcuts: {
+    'btn': 'py-2 px-4 font-semibold rounded-lg shadow-md',
   },
-  plugins:  [],
-}
+} )

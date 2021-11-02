@@ -1,14 +1,17 @@
-const { resolve } = require('path')
+const { resolve } = require( 'path' )
 
 const ROOT = process.cwd()
 
 const paths = {
-  '@config': 'config',
-  '@':       'src',
-  '@assets': 'src/@assets',
-  '@core':   'src/@core',
-  '@store':  'src/@core/store',
-  '@ui':     'src/@ui',
+  '@config':     'config',
+  '@':           'src',
+  '@assets':     'src/@assets',
+  '@core':       'src/@core',
+  '@modules':    'src/@modules',
+  '@ui':         'src/@ui',
+  '@components': 'src/@ui/components',
+  '@views':      'src/@ui/views',
+  '@layouts':    'src/@ui/layouts',
 }
 
 /**
@@ -18,10 +21,10 @@ const paths = {
  * @return {{}}
  */
 function makeAliasForWebpack() {
-  return Object.entries(paths).reduce(( aliases, [ alias, path ] ) => {
-    aliases[ alias ] = resolve(ROOT, path)
+  return Object.entries( paths ).reduce( ( aliases, [ alias, path ] ) => {
+    aliases[ alias ] = resolve( ROOT, path )
     return aliases
-  }, {})
+  }, {} )
 }
 
 /**
@@ -30,10 +33,10 @@ function makeAliasForWebpack() {
  * @return {Array}
  */
 function makeAliasForVite() {
-  return Object.entries(paths).reduce(( aliases, [ alias, path ] ) => {
-    aliases.push({ find: alias, replacement: resolve(ROOT, path) })
+  return Object.entries( paths ).reduce( ( aliases, [ alias, path ] ) => {
+    aliases.push( { find: alias, replacement: resolve( ROOT, path ) } )
     return aliases
-  }, [])
+  }, [] )
 }
 
 module.exports = {

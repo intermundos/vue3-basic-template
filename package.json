@@ -5,14 +5,17 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "dessys": "npx windicss-analysis"
   },
   "dependencies": {
+    "@dafcoe/vue-notification": "0.1.6",
+    "@jambonn/vue-next-progressbar": "0.1.4",
     "date-fns": "^2.17.0",
     "lodash": "^4.17.20",
+    "pinia": "^2.0.0-rc.15",
     "vue": "^3.0.11",
-    "vue-router": "^4.0.6",
-    "vuex": "^4.0.0"
+    "vue-router": "^4.0.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.2",
@@ -21,6 +24,8 @@
     "postcss": "^8.2.12",
     "sass": "^1.32.6",
     "tailwindcss": "^2.1.2",
-    "vite": "^2.2.3"
+    "vite": "^2.2.3",
+    "vite-plugin-windicss": "^1.4.12",
+    "windicss": "3.2.1"
   }
 }
