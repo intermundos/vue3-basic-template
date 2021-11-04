@@ -27,21 +27,30 @@ const routes = [
         path:      '',
         name:      'about',
         component: () => import('@ui/views/about.view.vue'),
-        meta:      {
-          // classes: [ 'bg-blue-600 text-2xl' ]
-        }
+        meta:      {}
       },
     ],
 
   },
 
-  //
-
+  // 404
+  {
+    path:      '/:pathMatch(.*)*',
+    name:      'not-found',
+    component: () => import('@ui/views/service-views/404.vue')
+  },
 ]
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0 }
+    }
+  }
 })
 
 export { router }
