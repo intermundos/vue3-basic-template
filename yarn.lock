@@ -66,6 +66,16 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@quasar/extras@1.11.4":
+  version "1.11.4"
+  resolved "https://registry.yarnpkg.com/@quasar/extras/-/extras-1.11.4.tgz#60cf6f0f9a55c860cf4ef66664fa8290040ea185"
+  integrity sha512-1Pyeazf2xnR3baELRB8eFU2paTCHJ3jqyOF8Qu3v+SksZYxav2Es1fD+qSgNDZLdcM87eZsUecmDqhvynJ0LIw==
+
+"@quasar/vite-plugin@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@quasar/vite-plugin/-/vite-plugin-1.0.2.tgz#392b7cab64e10eb309015fc907c0775889c0e959"
+  integrity sha512-iIE2RfmXZW97Mx+QUoYwlrtraQARmeHAhEi0GVknFjo6J4keSv9jS6iHQo9mu8AalzKG6eGnltgZf9JIKc7lEA==
+
 "@types/parse-json@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
@@ -184,6 +194,11 @@
     debug "^4.3.2"
     jiti "^1.12.9"
     windicss "^3.1.9"
+
+"@windicss/plugin-question-mark@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@windicss/plugin-question-mark/-/plugin-question-mark-0.1.1.tgz#437de5bbd1e27432a4693def2fba2f1a335b8876"
+  integrity sha512-LTnySh28mFncJqCw7VjZzYD3HkJynjHQ8wAIgsZUPTi8WzDJtUeYyFc8/ImXGL/jon55zzg9yy9y/lUyCvvrmA==
 
 "@windicss/plugin-utils@1.4.12":
   version "1.4.12"
@@ -1047,6 +1062,11 @@ purgecss@^4.0.3:
     postcss "^8.2.1"
     postcss-selector-parser "^6.0.2"
 
+quasar@2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/quasar/-/quasar-2.2.2.tgz#fc3a82a3c2aef3c3ef2db11b9be4d23b0c8333a0"
+  integrity sha512-X5+Q6N9LMG+1ebmAD+1CJst//mj3Tf3S2N6CwcGEO8OEpVTSU2G+t+shuO3EsQwjVJR6jBJDvcqRJhoxCliPXw==
+
 queue-microtask@^1.2.2:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
@@ -1126,10 +1146,10 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
-sass@^1.32.6:
-  version "1.43.4"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.43.4.tgz#68c7d6a1b004bef49af0d9caf750e9b252105d1f"
-  integrity sha512-/ptG7KE9lxpGSYiXn7Ar+lKOv37xfWsZRtFYal2QHNigyVQDx685VFT/h7ejVr+R8w7H4tmUgtulsKl5YpveOg==
+sass@~1.32.6:
+  version "1.32.13"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.13.tgz#8d29c849e625a415bce71609c7cf95e15f74ed00"
+  integrity sha512-dEgI9nShraqP7cXQH+lEXVf73WOPCse0QlFzSD8k+1TcOxCMwVXfQlr0jtoluZysQOyJGnfr21dLvYKDJq8HkA==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
 

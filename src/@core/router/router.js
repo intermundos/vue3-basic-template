@@ -19,19 +19,6 @@ const routes = [
 
   },
 
-  {
-    path:      '/about',
-    component: defaultLayout,
-    children:  [
-      {
-        path:      '',
-        name:      'about',
-        component: () => import('@ui/views/about.view.vue'),
-        meta:      {}
-      },
-    ],
-
-  },
 
   // 404
   {

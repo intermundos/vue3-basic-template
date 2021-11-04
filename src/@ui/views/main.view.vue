@@ -3,24 +3,19 @@
 </style>
 
 <template>
-  <section>
-    Main view Modal
 
-    <modal>
-      <h1 class="text-3xl font-medium text-green-700">
-        Teleport from main view to body with counter
-      </h1>
-    </modal>
+  <site-page>
+    Main
+  </site-page>
 
-  </section>
 </template>
 
 <script>
 
-  import Modal from '@ui/components/modal.vue'
+  import SitePage from '@ui/components/page/site-page.vue'
 
   export default {
     name:       'main.view',
-    components: { Modal }
+    components: { SitePage },
   }
 </script>

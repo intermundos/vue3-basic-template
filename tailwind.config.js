@@ -7,10 +7,8 @@ import { defineConfig } from 'windicss/helpers'
 export default defineConfig( {
   preflight: true,
   darkMode:  'class',
-  extract:   {
-    include: [ './**/*.html' ]
-  },
   plugins:   [
+    require( '@windicss/plugin-question-mark' ),
     // require( 'windicss/plugin/filters' ),
     // require( 'windicss/plugin/forms' ),
     // require( 'windicss/plugin/aspect-ratio' ),

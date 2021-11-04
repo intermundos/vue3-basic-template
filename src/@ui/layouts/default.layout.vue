@@ -1,23 +1,25 @@
 <style scoped lang="scss">
 
+  .layout {
+    @apply h-full;
+  }
+
 </style>
 
 <template>
 
-  <header class="p-3 bg-indigo-500">
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
-  </header>
+  <div class="layout default-layout">
+    <header class="">
+      <router-link to="/">Home</router-link>
+    </header>
 
-  <main>
     <router-view v-slot="{ Component, route }">
-      <transition name="fade" appear mode="ease-in" duration="100">
-        <component :is="Component" :class="[route.name, route.meta.classes]" />
-      </transition>
+      <main :class="[route.name]">
+        <component :is="Component" :class="[route.meta.classes]" />
+      </main>
     </router-view>
-  </main>
 
-  <footer>Footer</footer>
+  </div>
 
 </template>
 
